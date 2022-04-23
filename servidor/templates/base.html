@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/base.css')}}">
+    <meta property="og:image" content="https://pyshield.herokuapp.com/static/img/image.jpg">
+    <title>P.y.S.h.i.e.l.d</title>
+    {% block Head %}{% endblock %}
+</head>
+    <body>
+        <nav id="menu">
+            <ul>
+                <li>
+                    <a href="{{url_for('index')}}">Inicio</a>
+                </li>
+                <li>
+                    <a href="{{url_for('equipes')}}">Equipes</a>
+                </li>
+            </ul>
+        </nav>
+
+        {% block Body %}{% endblock %}
+    </body>
+</html>

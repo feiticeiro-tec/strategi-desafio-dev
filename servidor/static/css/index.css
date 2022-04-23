@@ -1,0 +1,33 @@
+#boas_vindas{
+    font-size: 5vw;
+    margin: auto;
+}
+
+section{
+    margin: auto;
+}
+section > p{
+    font-size: 2vw;
+    height: fit-content;
+    width: 47vw;
+    text-align: center;
+    font-family: 'Bebas';
+    margin: auto;
+    color: white;
+}
+main{
+    display: flex;
+    align-items: center;
+    height: 92%;
+}
+@media screen and (max-width:700px) {
+    section > p{
+        font-size: 3.4vw;
+        width: 68vw;
+    }
+    #boas_vindas{
+        font-size: 6.4vw;
+
+    }
+    
+}

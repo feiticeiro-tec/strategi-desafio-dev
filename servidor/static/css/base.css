@@ -1,0 +1,76 @@
+@font-face {
+    font-family: Bebas;
+    src: url('../font/bebas/Bebas-Regular.ttf');
+  }
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family:"Bebas";
+}
+input{
+  background-color: white;
+  padding: 2px;
+  border-radius: 7px;
+  border: none;
+}
+input:hover{
+  cursor: pointer;
+}
+html,body{
+  width: 100%;
+  height: -webkit-fill-available;
+}
+html{
+  background-image: url('../img/i887.webp');
+  background-size: cover;
+}
+body{
+  background-color: rgba(0,0,0,0.8);
+}
+.Marvel{
+    font-family: Bebas;
+    width: fit-content;
+    padding: 0px 10px;
+    background-color: red;
+    color: white;
+}
+#menu{
+  height: 45px;
+  background-color: red;
+}
+#menu ul{
+  
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  height: inherit;
+}
+#menu ul li{
+  height: fit-content;
+  place-self: center;
+}
+#menu ul li a{
+  padding: 10px;
+  font-family: 'Bebas';
+  color: white;
+  font-size: 2vw;
+}
+.message{
+  text-align: center;
+  color: white;
+  font-family: 'Bebas';
+  margin-top: 5px;
+  font-size: 18px;
+}
+.red{background-color: red;}
+.green{background-color:green}
+.center{margin: auto;}
+.min-w{width: fit-content;}
+@media screen and (max-width:700px){
+  #menu ul li a{
+    font-size: 5vw;
+  }
+}

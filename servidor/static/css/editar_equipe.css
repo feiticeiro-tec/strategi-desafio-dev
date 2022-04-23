@@ -1,0 +1,69 @@
+.row{
+    display: flex;
+    font-family: "Bebas";
+    
+}
+.destaque{
+    font-family: "Bebas";
+    color:red;
+    padding: 0px 6px;
+    font-size: 16px;
+    flex:2
+}
+.row>p {
+    width: inherit;
+    flex:1
+}
+#box-agentes{
+    background-color: white;
+    padding: 7px;
+    border-radius: 7px;
+    margin: 7px auto;
+    width: 400px;
+}
+.list-heroes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.list-heroes .card-hero{
+    width: 400px;
+    background-color: white;
+    color: black;
+    margin: 4px;
+    height: 135px;
+    background-size: cover;
+    border-radius: 7px;
+    
+}
+.card-hero .filter{
+    height: inherit;
+    background-color: rgba(0,0,0,0.6);
+    border: 2px solid white;
+    border-radius: 7px;
+    display: flex;
+    font-size: 12px;
+    justify-content: space-between;
+    padding: 6px;
+}
+.filter p{
+    color:white;
+    
+}
+.scroll{
+    overflow-y: scroll;
+    height: 455px;
+    background-color: white;
+    width: 64%;
+    margin: 23px auto auto auto;
+}
+@media screen and (max-width:700px){
+    #box-agentes{
+        width: 94vw;
+        
+    }   
+    .scroll{
+        width: 100%;
+        height: 80vh;
+    }
+}

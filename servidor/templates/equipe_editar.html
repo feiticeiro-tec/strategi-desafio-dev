@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block Head %}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/editar_equipe.css')}}">
+{% endblock %}
+
+{% block Body %}
+    {% if message %}
+        <p class="message {{message_color}}">{{message}}</p>
+    {% endif %}
+    <div id="box-agentes"><!-- Caixa De Onde Fica o Nome Da Equipe e Os Participantes-->
+        
+        <div class="row"><!-- Linha Do Nome Da Equipe-->
+            <p>Nome Da Equipe:</p>
+            <p class="destaque">{{equipe.name}}</p>
+            <form action="{{url_for('equipe_editar')}}" method="post">
+                <input type="hidden" name="action" value='0'>
+                <input type="hidden" name="equipe_id" value={{equipe.id}}>
+                <input type="submit" value="excluir">
+            </form>
+            
+        </div>
+        {% for worker in equipe.get_workers()%}
+            {% if worker %}
+                <div class="row"><!-- Linha Do Nome Do Participante-->
+                    <p>Agente:</p>
+                    <p class="destaque">{{worker.name}}</p>
+                    <form action="{{url_for('equipe_editar')}}" method="post">
+                        <input type="hidden" name="action" value='0'>
+                        <input type="hidden" name="hero_id" value={{worker.id}}>
+                        <input type="submit" value="expulsar">
+                    </form>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <form method="get" class='center min-w'><!-- Campo De Busca De Herois -->
+        <input type="text" name="hero-name">
+        <input type="submit" value="Procurar">
+    </form>
+    {%if heroes %}
+        <div class="scroll">
+        <ul class="list-heroes"><!-- Lista De Exibição De Herois-->
+            {% for hero in heroes %}
+                <li class="card-hero" style="background-image: url({{hero.image}})"><!-- Card Onde Fica As Informações Do Heroi -->
+                    <div class="filter">
+                        <div>
+                            <p>{{hero.name}}</p>
+                            <p>Agent: {{hero.id_hero}}</p>
+                        </div>
+                        <form action="{{url_for('equipe_editar')}}" method="post"><!-- Campo De Recrutamento De Heroi -->
+                            <input type="hidden" name="action" value='1'>
+                            <input type="hidden" name="hero_id" value={{hero.id}}>
+                            <input type="submit" value="recrutar">
+                        </form>
+                        
+                    </div>
+                </li>
+            {% endfor %}
+
+        </ul>
+        </div>
+    {% endif %}
+{% endblock %}

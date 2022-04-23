@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block Head %}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/equipes.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/card_equipe.css')}}">
+{% endblock %}
+
+{% block Body %}
+    {% if message %}
+        <p class="message {{message_color}}">{{message}}</p>
+    {% endif %}
+    <ul class="equipes">
+        {% for equipe in equipes.query.all() %}
+        <li>
+            <div class="card_equipe">
+                <div><div><p class="destaque">Nome:</p> <p>{{equipe.name}}</p></div> <a href="{{url_for('equipe_editar',Id = equipe.id)}}">Editar</a><a href="{{url_for('equipe_view',Id = equipe.id)}}">Ver</a></div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    <form method="post" class="center min-w">
+        <input type="text" name="name">
+        <input type="submit" value="Criar Equipe">
+    </form>
+{% endblock %}

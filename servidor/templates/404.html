@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block Head %}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+
+{% block Body %}
+<main>
+    <section>
+        <h1 class="Marvel" id="boas_vindas">Error 404</h1>
+        <p>
+            pagina nao existe ou foi ocultada por medidas de seguranca!
+        </p>
+    </section>
+</main>
+{% endblock %}

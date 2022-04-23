@@ -1,0 +1,19 @@
+.card_equipe{
+    background-color: white;
+    padding: 7px;
+    width: fit-content;
+    border-radius: 7px;
+    margin: 4px;
+}
+.card_equipe div{
+    width: 240px;
+    display: flex;
+}
+.card_equipe div a{
+    margin: 0px 5px;
+    align-self: center;
+    font-size: 11px;
+}
+.destaque{
+    color:red;
+}

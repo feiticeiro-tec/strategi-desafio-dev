@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block Head %}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/editar_equipe.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/view_equipe.css')}}">
+{% endblock %}
+
+{% block Body %}
+    {% if message %}
+        <p class="message {{message_color}}">{{message}}</p>
+    {% endif %}
+    <div id="box-agentes">
+        <div class="row">
+            <p>Nome Da Equipe:</p>
+            <p class="destaque">{{equipe.name}}</p>
+            
+        </div>
+    {%if heroes %}
+        <div class="scroll">
+        <ul class="list-heroes">
+            {% for hero in heroes %}
+                <li class="card-hero" style="background-image: url({{hero.image}})">
+                    <div class="filter">
+                        <div>
+                            <p>{{hero.name}}</p>
+                            <p>Agent: {{hero.hero_id}}</p>
+                        </div>    
+                    </div>
+                </li>
+            {% endfor %}
+
+        </ul>
+        </div>
+    {% endif %}
+{% endblock %}
