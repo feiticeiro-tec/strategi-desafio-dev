@@ -3,7 +3,6 @@ o projeto consiste em criar equipes de herois coletado da API: http://gateway.ma
 # Start
 ## export flask - important
 `export FLASK_APP='servidor:create_app()`  
-`export FLASK_ENV=development`  
 `flask run`
 
 ## create database - optional
