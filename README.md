@@ -2,6 +2,7 @@
 o projeto consiste em criar equipes de herois coletado da API: http://gateway.marvel.com/v1/public/characters
 # Start
 ## export flask - important
+`pip install -r requirements.txt`  
 `export FLASK_APP='servidor:create_app()`  
 `flask run`
 
